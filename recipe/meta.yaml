@@ -13,6 +13,9 @@ source:
 build:
   skip: True  # [not linux]
   number: 0
+  # https://github.com/01org/intel-hybrid-driver/blob/master/NEWS
+  run_exports:
+  - {{ pin_subpackage('intel-hybrid-driver', max_pin='x.x') }}
   # https://01.org/linuxgraphics/documentation/build-guide-0
   script:
     - ./autogen.sh --prefix=$PREFIX
@@ -26,9 +29,6 @@ requirements:
     - libtool
     - pkg-config
   host:
-    - libdrm
-    - cmrt
-  run:
     - libdrm
     - cmrt
 
