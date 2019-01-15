@@ -24,7 +24,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    {% if 'toolchain' in compiler('cxx') %}- {{ compiler('cxx') }}{% endif %}  # Who knows why this is necessary.
+    - {{ compiler('cxx') }}
     - autoconf
     - automake
     - libtool
