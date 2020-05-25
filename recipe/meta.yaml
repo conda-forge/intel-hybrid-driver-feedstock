@@ -31,7 +31,7 @@ requirements:
     - pkg-config
   host:
     - libdrm
-    - cmrt
+    - cmrt !=*1000
 
 test:
   commands:
